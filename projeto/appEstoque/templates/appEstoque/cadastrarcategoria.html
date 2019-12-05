@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Pagina de Cadastro de Categoria </title>
+</head>
+<body>
+
+<h2> Projeto controle de Estoque </h2>
+<hr />
+
+<p>
+    Utilize o formulário abaixo para efetuar
+    o cadastro da categoria.
+
+</p>
+
+<form method="POST" action="{% url 'estoque:cadcategoria' %}">
+
+    {% csrf_token %}
+
+    {{forms.nome.label }} {{forms.nome }}
+    <br /><br />
+    {{forms.sigla.label}} {{forms.sigla}}
+    <br /><br />
+    <input type="submit" value="Cadastrar" />
+
+</form>
+{% if msg %} {{ msg }} {% endif %}
+
+</body>
+</html>
